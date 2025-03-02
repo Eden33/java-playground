@@ -3,6 +3,8 @@ package com.eden33;
 import com.eden33.generics.GenericPlayground;
 import com.eden33.generics.GenericPlaygroundExersice;
 import com.eden33.generics2.GenericPlayground2;
+import com.eden33.reflection.PaymentServiceTest;
+import com.eden33.reflection.TestingFramework;
 
 /**
  * @author edi
@@ -11,6 +13,10 @@ import com.eden33.generics2.GenericPlayground2;
 public class Main {
 
 	public static void main(String args[]) {
+
+		/**
+		 * GenericPlayground
+		 */
 		
 		GenericPlayground.typArgumentsVsParameters();
 		GenericPlayground.rawType();
@@ -53,5 +59,21 @@ public class Main {
 		GenericPlayground2.understandPecsProducer();
 		GenericPlayground2.understandPecsConsumer();
 		GenericPlayground2.pecsInAcctionCollectionsMax();
+
+		/**
+		 * Reflection
+		 */
+		System.out.println(" ------ Play with Reflection 1 ------ START");
+
+		TestingFramework testingFramework = new TestingFramework();
+		try {
+			testingFramework.runTestSuite(PaymentServiceTest.class);
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+
+		System.out.println(" ------ Play with Reflection 1 ------ END");
+
+
 	}
 }
