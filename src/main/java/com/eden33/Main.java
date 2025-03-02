@@ -3,6 +3,8 @@ package com.eden33;
 import com.eden33.generics.GenericPlayground;
 import com.eden33.generics.GenericPlaygroundExersice;
 import com.eden33.generics2.GenericPlayground2;
+import com.eden33.reflection.Address6;
+import com.eden33.reflection.JsonWriter6;
 import com.eden33.reflection.PaymentServiceTest;
 import com.eden33.reflection.TestingFramework;
 
@@ -63,7 +65,7 @@ public class Main {
 		/**
 		 * Reflection
 		 */
-		System.out.println(" ------ Play with Reflection 1 ------ START");
+		System.out.println("\r\n ------ Play with Reflection - Methods Discovery ------ START\r\n");
 
 		TestingFramework testingFramework = new TestingFramework();
 		try {
@@ -72,7 +74,18 @@ public class Main {
 			e.printStackTrace();
 		}
 
-		System.out.println(" ------ Play with Reflection 1 ------ END");
+		System.out.println("\r\n ------ Play with Reflection - Methods Discovery ------ END\r\n");
+
+		System.out.println(" ------ Play with Reflection - Java Modifiers Discovery ------ START\r\n");
+
+		Address6 address6 = new Address6("Main Street", (short) 1, "12345");
+		try {
+			System.out.println(JsonWriter6.objectToJson(address6));
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
+
+		System.out.println("\r\n ------ Play with Reflection - Java Modifiers Discovery ------ END\r\n");
 
 
 	}
