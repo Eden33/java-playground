@@ -22,23 +22,44 @@ public class ClassAnalyzer {
         System.out.println("Is Enum: " + inputClass.isEnum());
         System.out.println("Name: " + inputClass.getSimpleName());
         System.out.println("Is part of JDK: " + isJdkClass(inputClass));
-        System.out.println("");
+
+        Set<Class<?>> allImplementedInterfaces = findAllImplementedInterfaces(inputClass);
         
+        if(allImplementedInterfaces.size() == 0) {
+            System.out.println(inputClass.getSimpleName() + " class. No implemented interfaces found.");
+        } else {
+            System.out.println(inputClass.getSimpleName() + " class. All implemented interfaces: ");
+            for (Class<?> implementedInterface : allImplementedInterfaces) {
+                System.out.println(implementedInterface.getName());
+            }           
+        }
+        System.out.println(""); 
     }
     
-    /*********** Helper Methods ***************/
-    
-    public static boolean isJdkClass(Class<?> inputClass) {  
+    private static boolean isJdkClass(Class<?> inputClass) {  
         String packageName = inputClass.getPackageName();
 
         return JDK_PACKAGE_PREFIXES.stream()
                 .anyMatch(packagePrefix -> packageName.startsWith(packagePrefix));
     }
 
-    public static void main(String[] args) {
-        analyze(Boolean.class);
-        analyze(boolean.class);
-        Address6 address = new Address6("Main St", (short) 101, "12345");
-        analyze(address.getClass());
+    /**
+     * Returns all the interfaces that the current input class implements.
+     * Note: If the input is an interface itself, the method returns all the interfaces the 
+     * input interface extends.
+     */
+    private static Set<Class<?>> findAllImplementedInterfaces(Class<?> input) {
+        Set<Class<?>> allImplementedInterfaces = new HashSet<>();
+        
+        Class<?>[] inputInterfaces = input.getInterfaces();
+        for (Class<?> currentInterface : inputInterfaces) {
+            allImplementedInterfaces.add(currentInterface);
+            Set<Class<?>> superInterfaces = findAllImplementedInterfaces(currentInterface);
+            if(superInterfaces.size() > 0) {
+                allImplementedInterfaces.addAll(superInterfaces);
+            }
+        }
+
+        return allImplementedInterfaces;
     }
 }

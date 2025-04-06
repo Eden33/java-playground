@@ -4,6 +4,8 @@ import com.eden33.generics.GenericPlayground;
 import com.eden33.generics.GenericPlaygroundExersice;
 import com.eden33.generics2.GenericPlayground2;
 import com.eden33.reflection.Address6;
+import com.eden33.reflection.ClassAnalyzer;
+import com.eden33.reflection.AnalyzeMyInterfaces;
 import com.eden33.reflection.JsonWriter6;
 import com.eden33.reflection.PaymentServiceTest;
 import com.eden33.reflection.TestingFramework;
@@ -65,7 +67,16 @@ public class Main {
 		/**
 		 * Reflection
 		 */
-		System.out.println("\r\n ------ Play with Reflection - Methods Discovery ------ START\r\n");
+
+		System.out.println("\r\n ------ Play with Reflection - Analyze classes ------ START\r\n");
+
+		ClassAnalyzer.analyze(Boolean.class);
+        ClassAnalyzer.analyze(boolean.class);
+        Address6 address = new Address6("Main St", (short) 101, "12345");
+        ClassAnalyzer.analyze(address.getClass());
+		ClassAnalyzer.analyze(AnalyzeMyInterfaces.class);
+
+		System.out.println("\r\n ------ Play with Reflection - Analyze classes ------ END\r\n");
 
 		TestingFramework testingFramework = new TestingFramework();
 		try {
