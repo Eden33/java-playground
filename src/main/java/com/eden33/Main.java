@@ -22,13 +22,33 @@ public class Main {
 		 * GenericPlayground
 		 */
 		
+		System.out.println("\n ------ Generic Playground: Type Arguments vs Parameters ------ START\n");
 		GenericPlayground.typArgumentsVsParameters();
+		System.out.println("\n ------ Generic Playground: Type Arguments vs Parameters ------ END\n");
+
+		System.out.println("\n ------ Generic Playground: Raw Type ------ START\n");
 		GenericPlayground.rawType();
+		System.out.println("\n ------ Generic Playground: Raw Type ------ END\n");
+
+		System.out.println("\n ------ Generic Playground: Method Declaration ------ START\n");
 		GenericPlayground.methodDeclaration();
+		System.out.println("\n ------ Generic Playground: Method Declaration ------ END\n");
+
+		System.out.println("\n ------ Generic Playground: Bounded Type Parameters ------ START\n");
 		GenericPlayground.boundedTypeParameters();
+		System.out.println("\n ------ Generic Playground: Bounded Type Parameters ------ END\n");
+
+		System.out.println("\n ------ Generic Playground: Understanding Subtyping 1 ------ START\n");
 		GenericPlayground.understandSubTyping1();
+		System.out.println("\n ------ Generic Playground: Understanding Subtyping 1 ------ END\n");
+
+		System.out.println("\n ------ Generic Playground: Understanding Subtyping 2 ------ START\n");
 		GenericPlayground.understandSubTyping2();
+		System.out.println("\n ------ Generic Playground: Understanding Subtyping 2 ------ END\n");
+
+		System.out.println("\n ------ Generic Playground: Understanding Subtyping 3 ------ START\n");
 		GenericPlayground.understandSubTyping3();
+		System.out.println("\n ------ Generic Playground: Understanding Subtyping 3 ------ END\n");
 
 		/**
 		 * Type inference is a Java compiler's ability to look at each method invocation and corresponding
@@ -37,11 +57,25 @@ public class Main {
 		 * is being assigned to, or returned. Finally, the inference algorithm tries to find the most specific type 
 		 * that works with all of the arguments.
 		 */
+		System.out.println("\n ------ Generic Playground: Type Inference Based on Return Type 1 ------ START\n");
 		GenericPlayground.typeInferenceBasedOnReturnType1();
+		System.out.println("\n ------ Generic Playground: Type Inference Based on Return Type 1 ------ END\n");
+
+		System.out.println("\n ------ Generic Playground: Type Inference Based on Return Type 2 ------ START\n");
 		GenericPlayground.typeInferenceBasedOnReturnType2();
+		System.out.println("\n ------ Generic Playground: Type Inference Based on Return Type 2 ------ END\n");
+
+		System.out.println("\n ------ Generic Playground: Type Inference Based on Method Arguments ------ START\n");
 		GenericPlayground.typeInferenceBasedOnMethodArguments();
+		System.out.println("\n ------ Generic Playground: Type Inference Based on Method Arguments ------ END\n");
+
+		System.out.println("\n ------ Generic Playground: Type Inference Based on the Diamond ------ START\n");
 		GenericPlayground.typeInferenceBasedOnTheDiamond();
+		System.out.println("\n ------ Generic Playground: Type Inference Based on the Diamond ------ END\n");
+
+		System.out.println("\n ------ Generic Playground: Type Inference for Class Constructors ------ START\n");
 		GenericPlayground.typeInferenceForClassConstructors();
+		System.out.println("\n ------ Generic Playground: Type Inference for Class Constructors ------ END\n");
 		
 		/**
 		 * In generic code, the question mark (?), called the wildcard, represents an unknown type. 
@@ -49,26 +83,50 @@ public class Main {
 		 * sometimes as a return type (though it is better programming practice to be more specific). 
 		 * The wildcard is never used as a type argument for a generic method invocation, a generic class instance creation, or a supertype.
 		 */
+		System.out.println("\n ------ Generic Playground: Upper Bound Wildcard ------ START\n");
 		GenericPlayground.upperBoundWildcard();
+		System.out.println("\n ------ Generic Playground: Upper Bound Wildcard ------ END\n");
+
+		System.out.println("\n ------ Generic Playground: Unbound Wildcard ------ START\n");
 		GenericPlayground.unboundWildcard();
+		System.out.println("\n ------ Generic Playground: Unbound Wildcard ------ END\n");
+
+		System.out.println("\n ------ Generic Playground: Lower Bound Wildcard ------ START\n");
 		GenericPlayground.lowerBoundWildcard();
+		System.out.println("\n ------ Generic Playground: Lower Bound Wildcard ------ END\n");
+
+		System.out.println("\n ------ Generic Playground: PECS Principle ------ START\n");
 		GenericPlayground.pecs();
+		System.out.println("\n ------ Generic Playground: PECS Principle ------ END\n");
 		
+		System.out.println("\n ------ Generic Playground Exercise ------ START\n");
 		GenericPlaygroundExersice.execute();
+		System.out.println("\n ------ Generic Playground Exercise ------ END\n");
 		
 		/**
 		 * GenericPlayeround2
 		 */
+		System.out.println("\n ------ Generic Playground 2: Generic Subtyping Works Differently ------ START\n");
 		GenericPlayground2.genericSubTypingWorksDifferent();
+		System.out.println("\n ------ Generic Playground 2: Generic Subtyping Works Differently ------ END\n");
+
+		System.out.println("\n ------ Generic Playground 2: Understanding PECS Producer ------ START\n");
 		GenericPlayground2.understandPecsProducer();
+		System.out.println("\n ------ Generic Playground 2: Understanding PECS Producer ------ END\n");
+
+		System.out.println("\n ------ Generic Playground 2: Understanding PECS Consumer ------ START\n");
 		GenericPlayground2.understandPecsConsumer();
+		System.out.println("\n ------ Generic Playground 2: Understanding PECS Consumer ------ END\n");
+
+		System.out.println("\n ------ Generic Playground 2: PECS in Action with Collections.max ------ START\n");
 		GenericPlayground2.pecsInAcctionCollectionsMax();
+		System.out.println("\n ------ Generic Playground 2: PECS in Action with Collections.max ------ END\n");
 
 		/**
 		 * Reflection
 		 */
 
-		System.out.println("\r\n ------ Play with Reflection - Analyze classes ------ START\r\n");
+		System.out.println("\n ------ Play with Reflection - Analyze classes ------ START\n");
 
 		ClassAnalyzer.analyze(Boolean.class);
         ClassAnalyzer.analyze(boolean.class);
@@ -76,8 +134,10 @@ public class Main {
         ClassAnalyzer.analyze(address.getClass());
 		ClassAnalyzer.analyze(AnalyzeMyInterfaces.class);
 
-		System.out.println("\r\n ------ Play with Reflection - Analyze classes ------ END\r\n");
+		System.out.println("\n ------ Play with Reflection - Analyze classes ------ END\n");
 
+		System.out.println("\n ------ Play with Reflection - Methods Discovery ------ START\n");
+		
 		TestingFramework testingFramework = new TestingFramework();
 		try {
 			testingFramework.runTestSuite(PaymentServiceTest.class);
@@ -85,9 +145,9 @@ public class Main {
 			e.printStackTrace();
 		}
 
-		System.out.println("\r\n ------ Play with Reflection - Methods Discovery ------ END\r\n");
+		System.out.println("\n ------ Play with Reflection - Methods Discovery ------ END\n");
 
-		System.out.println(" ------ Play with Reflection - Java Modifiers Discovery ------ START\r\n");
+		System.out.println("\n ------ Play with Reflection - Java Modifiers Discovery ------ START\n");
 
 		Address6 address6 = new Address6("Main Street", (short) 1, "12345");
 		try {
@@ -96,8 +156,6 @@ public class Main {
 			e.printStackTrace();
 		}
 
-		System.out.println("\r\n ------ Play with Reflection - Java Modifiers Discovery ------ END\r\n");
-
-
+		System.out.println("\n ------ Play with Reflection - Java Modifiers Discovery ------ END\n");
 	}
 }
