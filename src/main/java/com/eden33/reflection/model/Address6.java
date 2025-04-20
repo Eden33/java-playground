@@ -1,4 +1,4 @@
-package com.eden33.reflection;
+package com.eden33.reflection.model;
 public class Address6 {
     private static final int ZIP_CODE_MAX_DIGITS = 5;
     private final transient String zipCode;

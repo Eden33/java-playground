@@ -3,12 +3,14 @@ package com.eden33;
 import com.eden33.generics.GenericPlayground;
 import com.eden33.generics.GenericPlaygroundExersice;
 import com.eden33.generics2.GenericPlayground2;
-import com.eden33.reflection.Address6;
 import com.eden33.reflection.ClassAnalyzer;
-import com.eden33.reflection.AnalyzeMyInterfaces;
 import com.eden33.reflection.JsonWriter6;
 import com.eden33.reflection.PaymentServiceTest;
 import com.eden33.reflection.TestingFramework;
+import com.eden33.reflection.model.Address6;
+import com.eden33.reflection.model.AnalyzeMyInterfaces;
+import com.eden33.reflection.ObjectSizeCalculator;
+import com.eden33.reflection.model.AccountSummary;
 
 /**
  * @author edi
@@ -157,5 +159,14 @@ public class Main {
 		}
 
 		System.out.println("\n ------ Play with Reflection - Java Modifiers Discovery ------ END\n");
+
+		System.out.println("\n ------ Play with Reflection - Inspection of Fields & Arrays ------ START\n");
+
+		AccountSummary accountSummary = new AccountSummary("John", "Smith", (short) 20, 100_000);
+		ObjectSizeCalculator calculator = new ObjectSizeCalculator();
+		long size = calculator.sizeOfObject(accountSummary);
+		System.out.println("Estimated size of AccountSummary object: " + size + " bytes");
+
+		System.out.println("\n ------ Play with Reflection - Inspection of Fields & Arrays ------ END\n");
 	}
 }
