@@ -11,6 +11,7 @@ import com.eden33.reflection.model.Address6;
 import com.eden33.reflection.model.AnalyzeMyInterfaces;
 import com.eden33.reflection.ObjectSizeCalculator;
 import com.eden33.reflection.model.AccountSummary;
+import com.eden33.reflection.ArrayReader;
 
 /**
  * @author edi
@@ -166,6 +167,14 @@ public class Main {
 		ObjectSizeCalculator calculator = new ObjectSizeCalculator();
 		long size = calculator.sizeOfObject(accountSummary);
 		System.out.println("Estimated size of AccountSummary object: " + size + " bytes");
+
+		String[] names = new String[] {"John", "Michael", "Joe", "David"};
+        int[] input = new int[] {0, 10, 20, 30, 40};
+
+        ArrayReader arrayReader = new ArrayReader();
+
+        System.out.println("Element at index -1 in names array: " + arrayReader.getArrayElement(names, -1));
+        System.out.println("Element at index 3 in input array: " + arrayReader.getArrayElement(input, 3));
 
 		System.out.println("\n ------ Play with Reflection - Inspection of Fields & Arrays ------ END\n");
 	}
